@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Hallgató">
+<meta name="description" content="FUTUR Építész Stúdió weboldala">
+<title>FUTUR Építész Stúdió</title>
+<link rel="stylesheet" href="style.css">
+<link href="kepek/favicon.png" rel="icon" type="image/x-icon">
+<script>
+	function szamol(){
+		var tipusido=0;
+		var extra1=0;
+		var extra2=0;
+		var extra3=0;
+		if(document.getElementById("felhokarc").checked){tipusido=30;}
+		if(document.getElementById("tarsas").checked){tipusido=20;}
+		if(document.getElementById("csaladi").checked){tipusido=15;}
+	
+		if(document.getElementById("medence").checked){extra1=tipusido*0.05;}
+		if(document.getElementById("uvegfalak").checked){extra2=tipusido*0.1;}
+		if(document.getElementById("napelem").checked){extra3=tipusido*0.15;}
+			
+	document.getElementById("ido").value=tipusido+extra1+extra2+extra3;
+	}
+	
+	function ellenoriz(){	
+	var usernev = document.getElementById("nev").value;
+ if (usernev==-"")
+ {
+ alert("Kérjük, adja meg a nevét!");
+ return false;
+ }
+	return true;
+	}
+</script>
+</head>
+<body>
+<div class="row">
+<header class="col-12 col-t-12">
+<p>FUTUR Építész Stúdió</p>
+</header>
+</div>
+<div class="row">
+<nav>
+<ul>
+<li class="col-4 col-t-4"><a href="index.html" >Bemutatkozó</a></li>
+<li class="col-4 col-t-4"><a href="galeria.html">Képgaléria</a></li>
+<li class="col-4 col-t-4"><a href="#" class="active">Kapcsolat</a></li>
+</ul>
+</nav>
+</div>
+<div class="row">
+  <div class="col-12 col-t-12">
+    <section>
+      <h2>Lépjen kapcsolatba velünk:</h2>
+      <form onSubmit="return ellenoriz()" name="rendeles_urlap" action="http://szamtud.uni-corvinus.hu/receive.php" method="post">
+        <table class="urlap">
+          <tr>
+            <td colspan="2"><h4>Elérhetőségek</h4>
+              <label>Név:</label>
+              <input class="textbox" type="text"  id="nev" name="nev" size="50">
+              <br>
+              <label>E-Mail:</label>
+              <input class="textbox" type="text" name="email" size="50">
+              <br>
+              <label>Lakcím:</label>
+              <input class="textbox" type="text" name="lakcim" size="50"></td>
+          </tr>
+          <tr>
+            <td><p>Milyen épülettípus iránt érdeklődik?</p>
+              <p>
+                <label>
+                  <input type="radio" name="tipus" value="felhokarc" id="felhokarc">
+                  Felhőkarcoló</label>
+                <br>
+                <label>
+                <input type="radio"  name="tipus" value="tarsas" id="tarsas">
+                Társasház
+                </label>
+                <br>
+                <label>
+                  <input type="radio"  name="tipus" value="csaladi" id="csaladi">
+                  Családiház</label>
+              </p>
+              <p>Milyen extrák érdeklik?</p>
+              <label>
+                <input type="checkbox" name="medence" id="medence" value="igen">
+                Medence</label>
+              <br>
+              <label>
+                <input type="checkbox"  name="uvegfalak" id="uvegfalak" value="igen">
+                Üvegfalak</label>
+              <br>
+              <label>
+                <input type="checkbox" name="napelem" id="napelem" value="igen">
+                Napelem</label></td>
+            <td><p>
+                <input class="gomb" type="button" value="Kiszámol" onClick="szamol()">
+              </p>
+              <p>A kivitelezéshez szükséges becsült hónapok száma:
+                <input class="textbox" type="text" id="ido" name="ido">
+              </p></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input class="gomb" type="submit" value="Elküld">
+              <input class="gomb" type="reset" value="Töröl"></td>
+          </tr>
+        </table>
+      </form>
+    </section>
+  </div>
+  <div class="col-3 col-t-6">
+    <section  class="kapcsolat">
+      <p><span class="kiemel">FUTUR Építész Stúdió</span></p>
+      <p><span class="kiemel">Budapest, Példa u. 1, 1031</span></p>
+      <p><span class="kiemel">Telefonszám: +36 70 000 0000</span></p>
+      <p><span class="kiemel">E-mail: info@futur.hu</span></p>
+    </section>
+  </div>
+  <div class="col-6 col-t-6">
+    <figure> <img src="kepek/terkep.png" alt="térkép">
+      <figcaption>Stúdiónkat a Példa Irodaparkban találja</figcaption>
+    </figure>
+  </div>
+  <div class="col-3 col-t-12">
+    <aside>
+      <p>Felhívjuk kedves ügyfeleink figyelmét, hogy Stúdiónk kizárólag személyes egyeztetés után tesz árajánlatot.</p>
+      <p>Ezáltal jobban megismerhetjük egymás elképzeléseit és elvárásait mielőtt tárgyalásokba bocsátkoznánk, így elkerülve
+        mindkét oldalon az esetleges félreértések lehetőségét.</p>
+      <p>Szíves megértésüket köszönjük ennek tekintetében.</p>
+    </aside>
+  </div>
+</div>
+<div class="row">
+  <footer class="col-12 col-t-12">
+    <p>Az oldal nem reprezentál valós vállalatot, csupán tanítási célokat szolgál.</p>
+  </footer>
+</div>
+</body>
+</html>

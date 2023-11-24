@@ -1,0 +1,228 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: oldalcim;
+    src: url(betutipusok/oldalcim.ttf);
+}
+
+@font-face {
+    font-family: tartalom;
+    src: url(betutipusok/tartalom.ttf);
+}
+
+/*====ALTALANOS_ELEMEK====*/
+
+html {
+    font-family: tartalom;
+    padding: 0px;
+    margin: 0px;
+	color: rgb(255, 255, 255);
+	font-size: 1.2em;
+}
+
+body {
+	background-image: url(kepek/hatter.png);
+	background-position: center center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 0px;
+	margin: 0px;
+}
+
+header {
+	background-color:rgba(22,47,79,0.6);
+	margin-top: 0;
+	margin-bottom: 2%;
+	font-size: 4vw;
+	font-family: oldalcim;
+}
+
+footer {
+	background-color:rgba(65,65,65,0.6);
+	margin-top: 2%;
+	font-size: 0.8em;
+	text-align:center;
+	color: rgb(200,200,200);
+}
+
+/*====MENU====*/
+
+nav ul {
+	list-style-type: none;
+	margin: 0px;
+    padding: 0px;
+}
+
+
+nav li a {
+    display: block;
+    color: rgb(255, 255, 255);
+	background-color: rgba(22,47,79,0.6);
+    text-align: center;
+    text-decoration: none;
+	border-style: solid;
+	border-color: rgb(255, 255, 255);
+	padding: 5%;
+}
+
+nav .active {
+    background-color: rgba(144,153,162,0.6);
+	color: rgb(255, 255, 255);
+	border-color: rgb(255, 255, 255);
+}
+
+nav li a:hover {
+    background-color: rgb(255, 255, 255);
+	border-color: rgba(22,47,79,0.6);
+	color: rgba(22,47,79,0.6);
+}
+
+/*====OLDALELEMEK====*/
+
+article {
+	text-align: justify;
+	background-color: rgba(144,153,162,0.6);
+	padding: 1% 2% 1% 2%;
+}
+
+aside {
+	text-align: center;
+	background-color: rgba(144,153,162,0.6);
+	padding: 1% 2% 1% 2%;
+}
+
+section {
+	background-color: rgba(144,153,162,0.6);
+	padding: 2%;
+}
+
+figure {
+	margin:0px;
+	padding: 3%;
+	background-color: rgba(144,153,162,0.6);
+	text-align: center;
+}
+
+figcaption {
+	padding: 2%;
+}
+
+img {
+	max-width:100%;
+}
+
+/*====OSZTALYOK====*/
+
+ul.felsorolas {
+	list-style-image: url('kepek/kor.png');
+}
+
+section.kapcsolat {
+	text-align: right;
+}
+
+span.kiemel {
+	background-color: rgba(65,65,65,0.2);
+	padding: 2%;
+}
+
+table.galeria img {
+	padding: 2%;
+	transition: 2s;
+}
+
+table.galeria img:hover{
+	transform: scale(1.1);
+}
+
+table.urlap{
+	border: rgb(255, 255, 255) solid 1px;
+	border-collapse: collapse;
+	margin: 1% auto;
+	width: 80%;
+}
+		
+table.urlap td {
+	border: rgb(255, 255, 255) solid 1px;
+	padding: 2%;
+	width: 50%; 
+}
+
+/*====ADATBEVITEL====*/
+
+input.textbox {
+  width: 100%;
+  padding: 1%;
+  margin: 1%;
+  border: rgb(255, 255, 255) solid 1px;
+  border-radius: 4px;
+}
+
+input.gomb {
+  background-color: rgba(22,47,79,0.6);
+  font-family: tartalom;
+  font-size: 0.8em;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+}
+
+input.gomb:hover {
+  background-color: rgb(255, 255, 255);
+  border-color: rgba(22,47,79,0.6);
+  color: rgba(22,47,79,0.6);
+}
+
+input.gomb:active {
+  background-color: rgba(144,153,162,0.6);
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+/*====RESZPONZIVITAS====*/
+
+[class*="col-"] { /*mobile first*/
+    float: left;
+    padding: 15px;
+    width: 100%;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+@media only screen and (min-width: 600px) {
+    /* tablet */
+    .col-t-1 {width: 8.33%;}
+    .col-t-2 {width: 16.66%;}
+    .col-t-3 {width: 25%;}
+    .col-t-4 {width: 33.33%;}
+    .col-t-5 {width: 41.66%;}
+    .col-t-6 {width: 50%;}
+    .col-t-7 {width: 58.33%;}
+    .col-t-8 {width: 66.66%;}
+    .col-t-9 {width: 75%;}
+    .col-t-10 {width: 83.33%;}
+    .col-t-11 {width: 91.66%;}
+    .col-t-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* számítógép */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
